@@ -1,0 +1,13 @@
+version: '3'
+services:
+  goto:
+    image: linmounong/goto
+    restart: always
+    volumes:
+      - goto:/var/goto
+    command: -db /var/goto/goto.db
+    ports:
+      - 80:8096
+
+volumes:
+  goto:

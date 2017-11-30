@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <title>
+    Goto
+  </title>
+  <link rel="stylesheet" href="/s/lib/spectre.min.css" />
+</head>
+
+<body>
+  <div id="appel" style="width:100%;max-width:600;margin:auto">
+    <header class="navbar mt-10">
+      <section class="navbar-section">
+        <router-link to="/" class="navbar-brand mr-10">Go 短链接</router-link>
+        <router-link :to="{name:'listall'}" class="btn btn-link">浏览</router-link>
+        <router-link :to="{name:'listall',query:{owner:username}}" class="btn btn-link">我的</router-link>
+        <a href="/l/logout" class="btn btn-link">登出</a>
+      </section>
+      <section class="navbar-section">
+        <div class="input-group input-inline">
+          <input class="form-input" type="text" v-model="q" placeholder="key pattern" @keyup.enter="$router.push({name:'listall',query:{q:q}})" />
+          <router-link :to="{name:'listall',query:{q:q}}" class="btn btn-primary input-group-btn">搜索</router-link>
+        </div>
+      </section>
+    </header>
+    <router-view :username="username"></router-view>
+  </div>
+  <script src="/s/lib/vue.min.js"></script>
+  <script src="/s/lib/vue-resource.min.js"></script>
+  <script src="/s/lib/vue-router.min.js"></script>
+  <script src="/s/lib/vue-clipboard.min.js"></script>
+  <script src="/s/Show.js"></script>
+  <script src="/s/Search.js"></script>
+  <script>
+    const routes = [{
+      path: '/',
+      component: Show,
+      props: {
+        path: '',
+      },
+      name: 'index',
+    }, {
+      path: '/s/:q',
+      redirect: to => {
+        const {
+          hash,
+          params,
+          query
+        } = to;
+        query.q = params.q;
+        return {
+          name: 'listall',
+          query,
+          hash,
+        };
+      },
+    }, {
+      path: '/s/',
+      component: Search,
+      props: {
+        path: '',
+      },
+      name: 'listall',
+    }, {
+      path: '/:path',
+      component: Show,
+      props: true,
+      name: 'show',
+    }];
+
+    const router = new VueRouter({
+      routes
+    });
+
+    const app = new Vue({
+      el: '#appel',
+      router,
+      data: {
+        q: '',
+        username: '',
+      },
+      created() {
+        this.$http.get('/a/ok').then(r => this.username = r.data.username);
+      },
+    });
+  </script>
+</body>
+
+</html>
