@@ -13,7 +13,7 @@ const Show = {
   },
   computed: {
     shortenedLink() {
-      return 'http://yntest/' + this.key;
+      return 'http://algotest/' + this.key;
     },
   },
   methods: {

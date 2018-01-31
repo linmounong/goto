@@ -21,6 +21,8 @@ PATH /<key> redirect
 
 Rules
 
+TODO(ynlin): details and examples.
+
 1. A key may only cantain [a-zA-Z0-9-_.] e.g. "hello-world"/"go1.6.1". The length is at least 2.
 
 2. A URL may only contain scheme/userinfo/host/path, host mandatory. See https://golang.org/pkg/net/url/#URL.
@@ -37,12 +39,11 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-
-	"github.com/elazarl/go-bindata-assetfs"
 )
 
 var (
 	p = flag.Int("p", 8096, "HTTP port")
+	s = flag.Bool("s", false, "use local static assets")
 )
 
 func main() {
@@ -54,8 +55,12 @@ func main() {
 	http.Handle("/", dumped(http.HandlerFunc(gotoHandler)))
 	http.Handle("/a/", dumped(http.StripPrefix("/a", http.HandlerFunc(apiHandler))))
 	http.Handle("/h/", dumped(http.StripPrefix("/h", http.HandlerFunc(hashHandler))))
-	http.Handle("/s/", http.StripPrefix("/s/", http.FileServer(
-		&assetfs.AssetFS{Asset: Asset, AssetDir: AssetDir, AssetInfo: AssetInfo, Prefix: "s"})))
+	if *s {
+		log.Println("using local static assets")
+		http.Handle("/s/", dumped(http.StripPrefix("/s/", http.FileServer(http.Dir("s")))))
+	} else {
+		http.Handle("/s/", dumped(http.StripPrefix("/s/", http.FileServer(assetFS()))))
+	}
 	log.Println("serving on port", *p)
 	http.ListenAndServe(":"+strconv.Itoa(*p), nil)
 }
