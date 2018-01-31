@@ -1,6 +1,7 @@
 version: '3'
 services:
   goto:
+    build: .
     image: linmounong/goto
     restart: always
     volumes:

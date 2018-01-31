@@ -1,12 +1,20 @@
 ### usage
 
-bazel run :goto
+```
+$ go build
+$ ./goto -h
+Usage of ./goto:
+  -db string
+        filename of the SQLite file (default "goto.db")
+  -dump
+        dump http request
+  -p int
+        HTTP port (default 8096)
+  -s    use local static assets
+```
 
-### flags
+### docker
 
-* -db: database file (default goto.db)
-* -p: port to serve (default 8096)
-
-### TODO
-
-* basic user auth
+```
+docker-compoes up -d
+```
