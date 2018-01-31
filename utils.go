@@ -2,7 +2,6 @@ package main
 
 import (
 	"math/rand"
-	"net/http"
 	"time"
 )
 
@@ -36,13 +35,4 @@ func schedule(what func(), delay time.Duration) chan bool {
 		}
 	}()
 	return stop
-}
-
-func getUsername(r *http.Request) string {
-	return "ynlin"
-	// if u, err := r.Cookie("goto-username"); err != nil {
-	// 	return ""
-	// } else {
-	// 	return u.Value
-	// }
 }
