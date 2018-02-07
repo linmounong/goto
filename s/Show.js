@@ -50,6 +50,18 @@ const Show = {
         .then(j => this.renderResponse(j))
         .catch(e => this.myalert(e));
     },
+    remove() {
+      this.$http
+        .delete('/a/manage', {
+          params: {
+            key: this.key,
+            url: this.url,
+          },
+        })
+        .then(r => r.json(), e => e.json())
+        .then(this.init)
+        .catch(e => this.myalert(e));
+    },
     renderResponse(j) {
       if (!j.ok) {
         this.found = false;
@@ -127,6 +139,9 @@ const Show = {
     <div class="form-group">
       <button class="btn btn-primary input-group-btn" :disabled="found&&!!owner&&username!==owner" @click="update">
         {{found?'更新':'创建'}}
+      </button>
+      <button v-if="found&&!!owner&&username===owner" class="btn btn-primary input-group-btn" @click="remove">
+        删除
       </button>
     </div>
   </div>
