@@ -92,7 +92,7 @@ func sSearchJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/Search.js", size: 1751, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/Search.js", size: 1751, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -112,7 +112,7 @@ func sShowJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/Show.js", size: 3829, mode: os.FileMode(436), modTime: time.Unix(1517975806, 0)}
+	info := bindataFileInfo{name: "s/Show.js", size: 3829, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -132,7 +132,7 @@ func sFaviconIco() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/favicon.ico", size: 4286, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/favicon.ico", size: 4286, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -152,7 +152,7 @@ func sIndexHtml() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/index.html", size: 2282, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/index.html", size: 2282, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -172,7 +172,7 @@ func sLibSpectreMinCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/lib/spectre.min.css", size: 42495, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/lib/spectre.min.css", size: 42495, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -192,7 +192,7 @@ func sLibVueClipboardMinJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/lib/vue-clipboard.min.js", size: 15328, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/lib/vue-clipboard.min.js", size: 15328, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -212,7 +212,7 @@ func sLibVueResourceMinJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/lib/vue-resource.min.js", size: 15288, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/lib/vue-resource.min.js", size: 15288, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -232,7 +232,7 @@ func sLibVueRouterMinJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/lib/vue-router.min.js", size: 23189, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/lib/vue-router.min.js", size: 23189, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -252,7 +252,7 @@ func sLibVueMinJs() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "s/lib/vue.min.js", size: 79011, mode: os.FileMode(436), modTime: time.Unix(1512027769, 0)}
+	info := bindataFileInfo{name: "s/lib/vue.min.js", size: 79011, mode: os.FileMode(420), modTime: time.Unix(1533865460, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }

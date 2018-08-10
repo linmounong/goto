@@ -39,7 +39,7 @@ func schedule(what func(), delay time.Duration) chan bool {
 }
 
 func getUsername(r *http.Request) string {
-	return "ynlin"
+	return "default"
 	// if u, err := r.Cookie("goto-username"); err != nil {
 	// 	return ""
 	// } else {

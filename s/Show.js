@@ -13,7 +13,7 @@ const Show = {
   },
   computed: {
     shortenedLink() {
-      return 'http://algotest/' + this.key;
+      return 'http://' + location.host + '/' + this.key;
     },
   },
   methods: {
